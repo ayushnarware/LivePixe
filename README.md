@@ -28,7 +28,7 @@ Installation: To run LivePixel locally, follow these steps:
 Clone the repository:
 
 bash
-git clone https://github.com/yourusername/livepixel.git
+git clone https://github.com/ayushnarware/livepixel.git
 Navigate to the project directory:
 
 bash
