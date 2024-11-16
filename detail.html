@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LivePixe</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.jpg">
+    <link rel="stylesheet" href="./assets/css/common.css"/>
+    <link rel="stylesheet" href="./assets/css/detail.css"/>
+  </head>
+
+  <body>
+
+    <!-- Navigation Bar-->
+    <nav>
+      <a href="./"><img src="./assets/img/logo.jpg" alt="Logo" class="logo"/></a>
+      <a href="./">
+        <h1 class="title">LivePixe</h1>
+      </a>
+      
+        <form action="./search.html" method="get">
+          <input type="text" name="q" autocomplete="off" class="search" placeholder="Search anything"/>
+          <input type="submit" value="SEARCH" class="search"/>
+        </form>
+       
+        
+    </nav>
+
+    <!-- Main Section-->
+    <section>
+      <h1 class="heading">Image Detail </h1>
+      <div class="detail">
+        <img id="detail_image" alt="Primary"/>
+        <div class="content">
+          <h1 class="description" id="description_text"></h1>
+          <br />
+          <h3>Uploaded by - @<span id="username"></span></h3>
+          <h3>Image id - <span id="image_id"></span> </h3>
+          
+          <h4>Date - <span id="upload_date"></span></h4>
+          
+          <h5><span id="like_count"></span> Likes (<span id="view_count"></span> Views)</h5>
+          <hr />
+          <h1 class="description" id="alt_description"></h1>
+          <!-- <br />
+          <br />
+          <br />
+          <h5>Base Color</h5>
+          <br />
+          <div class="image_color" id="image_color">
+            <span id="color_text"></span>
+          </div> -->
+          <br />
+          <br />
+          <a target="_blank" id="download_link" class="button">DOWNLOAD </a>
+          <!-- Download -->
+        </div>
+      </div>
+    </section>
+    <!-- Footer of the page-->
+    <footer>
+      <h5>Designed and Developed by Ayush!</h5>
+      <div class="social-overlap process-scetion mt100">
+        <div class="social-icons mb-3 iconpad text-center">
+          <a href="https://github.com/ayushnarware" class="slider-nav-item"><i class="fab fa-github"><img src="./assets/img/github.png" height="40px"></i></a>
+          <a href="www.linkedin.com/in/ayushnarware" target="_blank" class="slider-nav-item"><i class="fab fa-linkedin"><img src="./assets/img/linkedin.png" height="40px"></i></a>
+          <a href="https://www.instagram.com/mr_ayush192/" target="_blank" class="slider-nav-item"><i class="fab fa-instagram"><img src="./assets/img/instagram.png" height="40px"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/detail.js"></script>
+  </body>
+</html>
