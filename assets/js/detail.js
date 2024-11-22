@@ -56,6 +56,12 @@ function downloadImage(url, filename) {
       link.download = filename;
       link.click();
       URL.revokeObjectURL(link.href); // Clean up
+      
+      // Show success alert
+      alert("Download successful! Your image is now saved.");
     })
-    .catch(console.error);
+    .catch(error => {
+      console.error(error);
+      alert("Failed to download the image. Please try again.");
+    });
 }
