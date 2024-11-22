@@ -34,4 +34,28 @@ function loadDetail(data) {
   const date = new Date(data.created_at);
   const upload_date = `${date.getUTCDate()}/${date.getUTCMonth() + 1}/${date.getUTCFullYear()}`;
   document.getElementById('upload_date').innerText = upload_date;
+
+
+  // Modify the download button to download the image
+  const downloadButton = document.getElementById('download_link');
+  downloadButton.href = data.urls.full; // Full-resolution image
+  downloadButton.download = `${data.id}.jpg`; // Suggests a default filename
+  downloadButton.onclick = function (event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    downloadImage(data.urls.full, `${data.id}.jpg`);
+  };
+}
+
+// Function to download the image
+function downloadImage(url, filename) {
+  fetch(url)
+    .then(response => response.blob())
+    .then(blob => {
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      link.click();
+      URL.revokeObjectURL(link.href); // Clean up
+    })
+    .catch(console.error);
 }
