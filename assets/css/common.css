@@ -67,6 +67,9 @@ nav .search:focus {
   outline: none !important;
   border: 1px solid var(--orange);
 }
+input.search.but {
+    cursor: pointer;
+}
 
 .heading {
   text-align: center;
