@@ -1,34 +1,21 @@
 let currentPage = 1; // Track the current page for API pagination
 
 window.onload = function () {
-  const location = window.location.href;
-  const url = new URL(location);
-  const search_params = new URLSearchParams(url.search);
+  fetchAndGenerateCards();
 
-  if (!search_params.has('q') || search_params.get('q') == "") {
-    window.location.href = './';
-  }
-
-  const query = search_params.get('q');
-  fetchAndGenerateCards(query);
-
-  // Set initial values in the UI
-  document.getElementsByName('q')[0].value = query;
-  document.getElementById('search_query').innerText = query;
-
-  // Add event listener to "Load More" button
+  // Add event listener to the "Load More" button
   const loadMoreButton = document.getElementById('load_more');
   loadMoreButton.addEventListener('click', function () {
-    fetchAndGenerateCards(query);
+    fetchAndGenerateCards();
   });
 };
 
-function fetchAndGenerateCards(query) {
-  const API_URL = `https://api.unsplash.com/search/photos?page=${currentPage}&per_page=30&query=${query}&client_id=${API_KEY}`;
+function fetchAndGenerateCards() {
+  const API_URL = `https://api.unsplash.com/photos?page=${currentPage}&per_page=30&client_id=${API_KEY}`;
   fetch(API_URL)
     .then(response => response.json())
     .then(function (data) {
-      generateCards(data.results);
+      generateCards(data);
       currentPage++; // Increment the page for the next request
     })
     .catch(error => console.error('Error fetching data:', error));
@@ -36,7 +23,7 @@ function fetchAndGenerateCards(query) {
 
 function generateCards(data) {
   console.log(data);
-  const container = document.getElementById('result_container');
+  const container = document.getElementById('image_container');
   const fragment = document.createDocumentFragment(); // Use a fragment for performance
   for (let i = 0; i < data.length; i++) {
     const single_item = data[i];
