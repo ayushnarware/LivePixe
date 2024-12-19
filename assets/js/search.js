@@ -7,7 +7,7 @@ window.onload = function () {
     window.location.href = './';
   }
 
-  fetch(`https://api.unsplash.com/search/photos?per_page=27&query=${search_params.get('q')}&client_id=${API_KEY}`).then(convert_to_json)
+  fetch(`https://api.unsplash.com/search/photos?per_page=30&query=${search_params.get('q')}&client_id=${API_KEY}`).then(convert_to_json)
   .then(function(data) {
     generateCards(data.results);
 
