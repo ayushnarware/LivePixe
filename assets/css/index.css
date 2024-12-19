@@ -62,3 +62,27 @@
     box-shadow: 4px 4px 0px var(--orange); /* Adjust shadow for mobile */
   }
 }
+
+/* Load More... */
+#load_more {
+  text-decoration: none;
+  color: var(--brown);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 2px solid var(--orange);
+  cursor: pointer;
+  border-radius: 20%;
+}
+
+#load_more:hover {
+  color: var(--light);
+  background-color: var(--orange);
+}
+#load_more{
+    padding:1rem;
+    ;
+  }
+#button_container{
+  display: flex;
+  justify-content: center;
+}
